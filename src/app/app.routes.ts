@@ -8,6 +8,7 @@ import { PassageirosFormComponent } from './passageiros/passageiros-form/passage
 import { CidadesListarComponent } from './cidades/cidades-listar/cidades-listar.component';
 
 import { LinhasListarComponent } from './linhas/linhas-listar/linhas-listar.component';
+import { LinhasFormComponent } from './linhas/linhas-form/linhas-form.component'
 
 import { PagamentosListarComponent } from './pagamentos/pagamentos-listar/pagamentos-listar.component';
 // import { LoginComponent } from './login/login.component'
@@ -48,7 +49,16 @@ const routes : Routes = [
     {
         path:'passageiros/:id',
         component: PassageirosFormComponent
+    },
+    {
+        path:'linhas/:id',
+        component: LinhasFormComponent
+    },
+    {
+        path:'linhas/novo',
+        component: PassageirosFormComponent
     }
+
 
 ]
 

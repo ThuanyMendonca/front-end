@@ -21,8 +21,6 @@ import { FormsModule } from '@angular/forms';
     RoutingModule,
     HttpClientModule,
     FormsModule
-    
-
   ],
   exports: [
     PassageirosListarComponent,

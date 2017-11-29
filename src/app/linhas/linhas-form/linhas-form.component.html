@@ -1,6 +1,6 @@
-<!-- <div class="container">
-<form #passageirosForm="ngForm" (ngSubmit)="enviar()">
-  <pre>{{ model | json}}</pre>
+ <div class="container">
+<form #linhasForm="ngForm" (ngSubmit)="enviar()">
+  <!-- <pre>{{ model | json}}</pre> -->
   <div class="form-group">
     <label for="nome">Linha</label>
     <input type="text" id="linha" name=linha 
@@ -18,32 +18,9 @@
     <input id="destino" name="destino"
       [(ngModel)]="model.destino" class="form-control">
   </div>
-
-  <div class="form-group">
-    <label for="cidade_origem">Cidade Origem</label>
-    <select id="cidade_origem" name="cidade_origem" class="form-control"
-      [(ngModel)]="model.cidade_origem">
-      <option value="">(Selecione)</option>
-      <option *ngFor="let cid of ci | async" [ngValue]="cid._id">
-        {{cid.cidade}}
-      </option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="cidade_destino">Cidade Destino</label>
-    <select id="cidade_destino" name="cidade_destino" class="form-control"
-      [(ngModel)]="model.cidade_destino">
-      <option value="">(Selecione)</option>
-      <option *ngFor="let cid of ci | async" [ngValue]="cid._id">
-        {{cid.cidade}}
-      </option>
-    </select>
-  </div>
-
   <div class="text-center">
     <input type="submit" class="btn btn-primary" value="Enviar" />
   </div>
 
 </form>
-</div> -->
+</div> 
