@@ -1,0 +1,25 @@
+<div class="container">
+<h2 style="text-align:center">{{titulo}}</h2>
+  <a [routerLink]="['/pagamentos/novo']" class="btn btn-primary btn-md" style="background-color: #dc3545;">
+  Novo Pagamento
+  </a>
+  <br><br>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th class="bg-danger text-white" >Valor</th>
+        <th class="bg-danger text-white">Troco</th>
+        <th class="bg-danger text-white">Excluir</th>
+      </tr>
+      <tr *ngFor="let pagamento of pagamentos">
+      <td> R$ {{ pagamento.valor }}</td>
+      <td> R$ {{ pagamento.troco }}</td>        
+      <td>
+          <button class="btn btn btn-danger" (click)="excluir(pagamento._id)">
+             <span class="glyphicon glyphicon-trash"></span> 
+          </button>
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>

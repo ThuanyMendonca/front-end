@@ -1,0 +1,20 @@
+<div class="container">
+<h2 style="text-align:center">{{titulo}}</h2>
+
+  <table class="table table-responsive">
+    <tr>
+      <th class="bg-danger text-white">Linha</th>
+      <th class="bg-danger text-white">Partida</th>
+      <th class="bg-danger text-white">Destino</th>
+    </tr>
+    <tr *ngFor="let linha of linhas">
+      <td>{{ linha.linha }}</td>
+      <td>{{ linha.partida }}</td>
+      <td>{{ linha.dest }}</td>
+    </tr>
+
+  </table>
+</div>
+
+
+

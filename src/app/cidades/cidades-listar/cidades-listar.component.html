@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+<div class="container">
+  <h2 style="text-align:center">{{titulo}}</h2>
+
+  <table class="striped"  >
+    <tr>
+      <th>Cidade</th>
+      <th>Estado</th>
+    </tr>
+    <tr *ngFor="let cidade of cidades">
+      <td>{{ cidade.cidade }}</td>
+      <td>{{ cidade.estado }}</td>
+    </tr>
+  </table>
+</div>
