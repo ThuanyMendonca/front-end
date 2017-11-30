@@ -3,9 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 export class Cidade{
-  // public linha: String;
-  // public partida: String;
-  // public dest: String;
   public _id: String;
   public cidade: String;
   public cidade_origem: String;

@@ -7,20 +7,18 @@
       [(ngModel)]="model.linha" class="form-control" />
   </div>
 
-  <div class="form-group">
-    <label for="partida">Partida</label>
-    <input id="partida" name="partida"
-      [(ngModel)]="model.partida" class="form-control">
-  </div>
-
-  <div class="form-group">
-    <label for="destino">Destino</label>
-    <input id="destino" name="destino"
-      [(ngModel)]="model.destino" class="form-control">
-  </div>
+        <div class="form-group">
+          <label for="partida">Origem</label>
+          <input id="partida" name="cpf"
+            [(ngModel)]="model.partida" class="form-control">
+        </div>
+          <div class="form-group">
+          <label for="dest">Destino</label>
+          <input id="dest" name="dest"
+            [(ngModel)]="model.dest" class="form-control">
+        </div>
   <div class="text-center">
     <input type="submit" class="btn btn-primary" value="Enviar" />
   </div>
-
 </form>
 </div> 

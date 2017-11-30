@@ -17,9 +17,9 @@ export class PassageirosFormComponent implements OnInit {
   private id: string;
   private cidade_origem: string;
   private cidade_destino:string;
+  
   constructor(
     private pas: PassageirosService,
-    // private linhas: PartidaDestinoService
     private cidades: PartidaDestinoService,
     private router: Router,
     private route: ActivatedRoute

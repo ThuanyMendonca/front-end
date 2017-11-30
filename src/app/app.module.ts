@@ -22,6 +22,8 @@ import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { CobradorsListarComponent } from './cobradors/cobradors-listar/cobradors-listar.component';
 import { CobradorsFormComponent } from './cobradors/cobradors-form/cobradors-form.component';
+import { PassagemsListarComponent } from './passagems/passagems-listar/passagems-listar.component';
+import { PassagemsFormComponent } from './passagems/passagems-form/passagems-form.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { CobradorsFormComponent } from './cobradors/cobradors-form/cobradors-for
     HomeComponent,
     MenuComponent,
     CobradorsListarComponent,
-    CobradorsFormComponent
+    CobradorsFormComponent,
+    PassagemsListarComponent,
+    PassagemsFormComponent
     
   ],
   imports: [

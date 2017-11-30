@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
   providers:[LinhasService, PartidaDestinoService]
 })
 export class LinhasFormComponent implements OnInit {
-  private titulo = 'Nova linha'
+  private title = 'Nova linha'
   private model: Linha = new Linha();
   private ci: any;
   private id: string;

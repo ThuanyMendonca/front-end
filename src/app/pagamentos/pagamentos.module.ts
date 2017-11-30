@@ -7,12 +7,14 @@ import { PagamentosListarComponent } from './pagamentos-listar/pagamentos-listar
 // import { PagamentosFormComponent } from './pagamentos-form/pagamentos-form.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { PagamentosFormComponent } from './pagamentos-form/pagamentos-form.component';
 
 
 
 @NgModule({
   declarations: [
     PagamentosListarComponent,
+    PagamentosFormComponent,
     // PagamentosFormComponent
   ],
   imports: [
