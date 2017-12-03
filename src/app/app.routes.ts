@@ -11,8 +11,13 @@ import { LinhasListarComponent } from './linhas/linhas-listar/linhas-listar.comp
 import { LinhasFormComponent } from './linhas/linhas-form/linhas-form.component'
 
 import { PagamentosListarComponent } from './pagamentos/pagamentos-listar/pagamentos-listar.component';
-// import { LoginComponent } from './login/login.component'
 
+
+import { PassagemsFormComponent } from './passagems/passagems-form/passagems-form.component';
+import { PassagemsListarComponent } from './passagems/passagems-listar/passagems-listar.component';
+
+import { CobradorsFormComponent } from './cobradors/cobradors-form/cobradors-form.component';
+import { CobradorsListarComponent } from './cobradors/cobradors-listar/cobradors-listar.component';
 const routes : Routes = [
     //Rota raiz
     {
@@ -57,6 +62,30 @@ const routes : Routes = [
     {
         path:'linhas/novo',
         component: PassageirosFormComponent
+    },
+    {
+        path:'passagems/:id',
+        component: PassagemsFormComponent
+    },
+    {
+        path:'passagems/novo',
+        component: PassagemsFormComponent
+    },
+    {
+        path: 'passagems',
+        component:PassagemsListarComponent
+    },
+    {
+        path: 'cobradores',
+        component: CobradorsListarComponent
+    },
+    {
+        path:'cobradores/novo',
+        component: CobradorsFormComponent
+    },
+    {
+        path: 'cobradores/:id',
+        component: CobradorsFormComponent
     }
 
 

@@ -20,22 +20,20 @@ import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 // import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
-import { CobradorsListarComponent } from './cobradors/cobradors-listar/cobradors-listar.component';
-import { CobradorsFormComponent } from './cobradors/cobradors-form/cobradors-form.component';
-import { PassagemsListarComponent } from './passagems/passagems-listar/passagems-listar.component';
-import { PassagemsFormComponent } from './passagems/passagems-form/passagems-form.component';
+// import { CobradorsListarComponent } from './cobradors/cobradors-listar/cobradors-listar.component';
+// import { CobradorsFormComponent } from './cobradors/cobradors-form/cobradors-form.component';
 
+import { PassagemsModule } from './passagems/passagems.module';
+import { PassagemsService } from './passagems/passagems.service';
+
+import { CobradorsModule } from './cobradors/cobradors.module';
+import { CobradorsService } from './cobradors/cobradors.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuComponent,
-    CobradorsListarComponent,
-    CobradorsFormComponent,
-    PassagemsListarComponent,
-    PassagemsFormComponent
-    
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +44,9 @@ import { PassagemsFormComponent } from './passagems/passagems-form/passagems-for
     PagamentosModule,
     PassageirosModule,
     LinhasModule,
-    FormsModule
+    FormsModule,
+    PassagemsModule,
+    CobradorsModule
   ],
   schemas: [],
   providers: [

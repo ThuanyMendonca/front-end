@@ -4,7 +4,6 @@ import { PartidaDestinoService, Cidade } from '../../passageiros/partida-destino
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-
 @Component({
   selector: 'app-linhas-form',
   templateUrl: './linhas-form.component.html',

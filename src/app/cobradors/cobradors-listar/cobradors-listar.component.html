@@ -1,3 +1,28 @@
-<p>
-  cobradors-listar works!
-</p>
+<div class="container">
+  <h2 style="text-align:center">{{titulo}}</h2>
+  <a [routerLink]="['/cobradores/novo']" class="btn btn-primary btn-md" style="background-color: #dc3545;">
+  Nova Cobrador
+  </a>
+  <br><br>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th class="bg-danger text-white">Cobrador</th>
+        <th class="bg-danger text-white">E-mail</th>
+      </tr>
+      <tr *ngFor="let co of cobradores">
+        <td>
+          <a [routerLink]="['/cobradores', cobradores._id]">
+          {{co.nome}}
+        </a>
+        </td>
+        <td>{{ co.email }}</td>
+        <td>
+          <button class="btn btn btn-danger" (click)="excluir(cobradores._id)">
+             <span class="glyphicon glyphicon-trash"></span> 
+          </button>
+        </td>
+      </tr>
+    </thead>
+  </table>
+</div>

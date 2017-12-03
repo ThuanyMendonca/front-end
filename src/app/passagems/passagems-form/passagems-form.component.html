@@ -1,3 +1,76 @@
-<p>
-  passagems-form works!
-</p>
+<div class="container">  
+  <div class="card">
+    <img class="card-img-top" src="#">
+    <div class="card-body">
+      <!-- Formulario -->
+      <form #passagemsForm="ngForm" (ngSubmit)="enviar()" >
+      <!-- <pre>{{ model | json}}</pre> -->
+
+      <div class="form-group">
+          <label for="nome">Nome</label>
+          <select id="nome" name="nome" class="form-control"
+            [(ngModel)]="model.nome">
+            <option value="">(Selecione)</option>
+            <option *ngFor="let p of pas" [ngValue]="p._id">
+              {{p.nome}}
+            </option>
+          </select>
+        </div>
+      
+      <!-- <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name=nome 
+            [(ngModel)]="model.nome" class="form-control" />
+        </div> -->
+
+        <div class="form-group">
+          <label for="cpf">CPF</label>
+          <input id="cpf" name="cpf"
+            [(ngModel)]="model.cpf" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="nome_cobrador">Cobrador</label>
+          <input id="nome_cobrador" name="nome_cobrador"
+            [(ngModel)]="model.nome_cobrador" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="data">Data</label>
+          <input id="data" name="data" type="Date"
+            [(ngModel)]="model.data" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label for="cidade_origem">Cidade Origem</label>
+          <select id="cidade_origem" name="cidade_origem" class="form-control"
+            [(ngModel)]="model.cidade_origem">
+            <option value="">(Selecione)</option>
+            <option *ngFor="let cid of ci | async" [ngValue]="cid._id">
+              {{cid.cidade}}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cidade_destino">Cidade Destino</label>
+          <select id="cidade_destino" name="cidade_destino" class="form-control"
+            [(ngModel)]="model.cidade_destino">
+            <option value="">(Selecione)</option>
+            <option *ngFor="let cid of ci | async" [ngValue]="cid._id">
+              {{cid.cidade}}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="valor">Valor</label>
+          <input id="valor" name="valor" type="Number"
+            [(ngModel)]="model.valor" class="form-control">
+        </div>
+        <div class="text-center">
+          <input type="submit" class="btn btn-primary" value="Enviar" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
