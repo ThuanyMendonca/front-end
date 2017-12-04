@@ -4,8 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 
-import { CidadesModule } from './cidades/cidades.module';
-
 import { LinhasModule } from './linhas/linhas.module';
 import { LinhasService } from './linhas/linhas.service';
 
@@ -14,6 +12,8 @@ import { PagamentosModule } from './pagamentos/pagamentos.module';
 import { PassageirosModule } from './passageiros/passageiros.module';
 import { PassageirosService } from './passageiros/passageiros.service';
 
+import { CidadesModule } from './cidades/cidades.module';
+import { CidadesService } from './cidades/cidades.service';
 // import { RouterModule, Routes } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';

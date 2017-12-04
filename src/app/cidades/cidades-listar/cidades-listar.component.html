@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
 <div class="container">
   <h2 style="text-align:center">{{titulo}}</h2>
@@ -8,9 +8,43 @@
       <th>Cidade</th>
       <th>Estado</th>
     </tr>
-    <tr *ngFor="let cidade of cidades">
-      <td>{{ cidade.cidade }}</td>
-      <td>{{ cidade.estado }}</td>
+    <tr *ngFor="let c of cidades">
+      <td>{{ c.cidades }}</td>
+      <td>{{ c.estado }}</td>
     </tr>
   </table>
+</div> -->
+
+<div class="container">
+<h2 style="text-align:center">{{titulo}}</h2>
+  <a [routerLink]="['/cidades/novo']" class="btn btn-primary btn-md" style="background-color: #dc3545;">
+  Nova Cidade
+  </a>
+  <br><br>
+  <table class="table table-responsive">
+    <thead>
+      <tr>
+        <th class="bg-danger text-white" >Cidade</th>
+        <th class="bg-danger text-white">Estado</th>
+        <th class="bg-danger text-white">Excluir</th>
+      </tr>
+      <tr *ngFor="let cid of cidades">
+      <td>
+        <a [routerLink]="['/cidades', cidades._id]">
+          {{cid.cidade}}
+        </a>
+      </td>     
+        <td>{{ cid.estado }}</td>
+        <td>
+          <button class="btn btn btn-danger" (click)="excluir(c._id)">
+             <span class="glyphicon glyphicon-trash"></span> 
+          </button>
+        </td>
+      </tr>
+    </thead>
+  </table>
 </div>
+
+
+
+

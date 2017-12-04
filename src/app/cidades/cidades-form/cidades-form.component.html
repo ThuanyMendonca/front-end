@@ -1,3 +1,19 @@
-<p>
-  cidades-form works!
-</p>
+ <div class="container">
+<form #cidadesForm="ngForm" (ngSubmit)="enviar()">
+  <!-- <pre>{{ model | json}}</pre> -->
+  <div class="form-group">
+    <label for="cidade">Cidade</label>
+    <input type="text" id="cidade" name=cidade 
+      [(ngModel)]="model.cidade" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label for="estado">Estado</label>
+    <input type="text" id="estado" name=estado 
+      [(ngModel)]="model.estado" class="form-control" />
+  </div>
+  
+  <div class="text-center">
+    <input type="submit" class="btn btn-primary" value="Enviar" />
+  </div>
+</form>
+</div> 
