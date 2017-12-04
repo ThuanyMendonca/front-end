@@ -42,7 +42,7 @@ export class PagamentosFormComponent implements OnInit {
       }
     )
     
-    // this.pa = this.pagamentos.listarTodos()
+    this.pa = this.pag.listarTodos()
     
   }
   enviar(){

@@ -1,24 +1,36 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { PagamentosService } from '../pagamentos.service';
+
 
 @Component({
   selector: 'app-pagamentos',
   templateUrl: './pagamentos-listar.component.html',
-  styleUrls: ['./pagamentos-listar.component.css']
+  styleUrls: ['./pagamentos-listar.component.css'],
+  providers: [PagamentosService]
 })
 export class PagamentosListarComponent implements OnInit {
 
   private titulo = 'Pagamentos'
 
-  private pagamentos
-  constructor(private http: HttpClient) { 
-    
-    this.http.get('http://localhost:3000/pagamentos')
-    .subscribe(dados => this.pagamentos = dados)
-    console.log(this.pagamentos);
+  private pagamentos: any;
+  constructor(private service: PagamentosService) { 
   }
 
   ngOnInit() {
+    this.atualizarLista()
   }
 
+  atualizarLista(){
+    this.service.listarTodos().subscribe(dados => this.pagamentos = dados)
+  }
+
+  excluir(id: string){
+    
+      if(confirm('Deseja realmente excluir?')){
+        this.service.excluir(id).subscribe(
+        () => this.atualizarLista(),
+        erro => console.error(erro)
+    )  
+      }    
+  }
 }
