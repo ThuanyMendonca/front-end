@@ -17,7 +17,6 @@ export class PassageirosListarComponent implements OnInit {
   // private passageiros
   constructor(private service: PassageirosService) { 
     
-    // console.log(this.passageiros);
   }
     
   ngOnInit() {
