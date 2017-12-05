@@ -1,8 +1,7 @@
-
 <div class="container">
 <h2 style="text-align:center">{{titulo}}</h2>
-  <a [routerLink]="['/passageiros/novo']" class="btn btn-primary btn-md" style="background-color: #dc3545;">
-  Novo Passageiro
+  <a [routerLink]="['/passagems/novo']" class="btn btn-primary btn-md" style="background-color: #dc3545;">
+  Nova Passagem
   </a>
   <br><br>
   <table class="table table-responsive">
@@ -10,26 +9,29 @@
       <tr>
         <th class="bg-danger text-white" >Nome</th>
         <th class="bg-danger text-white">CPF</th>
-        <th class="bg-danger text-white">Celular</th>
+        <!-- <th class="bg-danger text-white">Cobrador</th> -->
         <th class="bg-danger text-white">Origem</th>
         <th class="bg-danger text-white">Destino</th>
         <th class="bg-danger text-white">Data</th>
+        <th class="bg-danger text-white">Valor</th>
+        
         <th class="bg-danger text-white">Excluir</th>
       </tr>
-      <tr *ngFor="let passageiro of passageiros">
+      <tr *ngFor="let p of pas">
       <td>
-        <a [routerLink]="['/passageiros', passageiro._id]">
-          {{passageiro.nome}}
+        <a [routerLink]="['/passagems', p._id]">
+          {{p.nome}}
         </a>
       </td>     
- 
-        <td>{{ passageiro.cpf }}</td>
-        <td>{{ passageiro.celular }}</td>
-        <td>{{ passageiro.cidade_origem.cidade }}</td>
-        <td>{{ passageiro.cidade_destino.cidade }}</td>
-        <td>{{ passageiro.data | date: 'dd/MM/yyyy' }}</td>
+
+         <td>{{ p.cpf }}</td> 
+        <!-- <td>{{ p.nome}}</td> -->
+        <td>{{ p.cidade_origem.cidade }}</td>
+        <td>{{ p.cidade_destino.cidade }}</td>
+        <td>{{ p.data | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ p.valor}}</td> 
         <td>
-          <button class="btn btn btn-danger" (click)="excluir(passageiro._id)">
+          <button class="btn btn btn-danger" (click)="excluir(p._id)">
              <span class="glyphicon glyphicon-trash"></span> 
           </button>
         </td>
@@ -37,5 +39,3 @@
     </thead>
   </table>
 </div>
-
-

@@ -14,7 +14,6 @@ export class CobradorsListarComponent implements OnInit {
 
   constructor(private service: CobradorsService) { }
 
-
   ngOnInit() {
     this.atualizarLista()
   }

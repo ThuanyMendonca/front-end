@@ -23,11 +23,13 @@ import { FormsModule } from '@angular/forms';
 // import { CobradorsListarComponent } from './cobradors/cobradors-listar/cobradors-listar.component';
 // import { CobradorsFormComponent } from './cobradors/cobradors-form/cobradors-form.component';
 
-// import { PassagemsModule } from './passagems/passagems.module';
-// import { PassagemsService } from './passagems/passagems.service';
+import { PassagemsModule } from './passagems/passagems.module';
+import { PassagemsService } from './passagems/passagems.service';
 
 import { CobradorsModule } from './cobradors/cobradors.module';
 import { CobradorsService } from './cobradors/cobradors.service';
+// import { PassagemsComponent } from './passagems/passagems.component';
+import { PassagemsFormComponent } from './passagems/passagems-form/passagems-form.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { CobradorsService } from './cobradors/cobradors.service';
     PassageirosModule,
     LinhasModule,
     FormsModule,
-    // PassagemsModule,
+    PassagemsModule,
     CobradorsModule
   ],
   schemas: [],

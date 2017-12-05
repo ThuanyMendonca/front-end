@@ -13,12 +13,7 @@ export class LinhasListarComponent implements OnInit {
 
   private linhas: any;
 
-  constructor(private service: LinhasService) { 
-    
-    // this.http.get('http://localhost:3000/linhas')
-    // .subscribe(dados => this.linhas = dados)
-    // console.log(this.linhas);
-  }
+  constructor(private service: LinhasService) { }
 
   ngOnInit() {
       this.atualizarLista()
