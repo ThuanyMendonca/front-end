@@ -18,8 +18,8 @@
           {{linha.linha}}
         </a>
       </td>     
-        <td>{{ linha.partida }}</td>
-        <td>{{ linha.dest }}</td>
+        <td>{{ linha.cidade_origem.cidade }}</td>
+        <td>{{ linha.cidade_destino.cidade }}</td>
         <td>
           <button class="btn btn btn-danger" (click)="excluir(linha._id)">
              <span class="glyphicon glyphicon-trash"></span> 

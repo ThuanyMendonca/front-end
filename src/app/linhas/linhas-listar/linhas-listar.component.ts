@@ -20,7 +20,7 @@ export class LinhasListarComponent implements OnInit {
   }
 
   atualizarLista(){
-    this.service.listarTodos().subscribe(dados => this.linhas = dados)
+    this.service.listarTodos().subscribe(dados => this.linhas = dados )
   }
 
   excluir(id: string){
