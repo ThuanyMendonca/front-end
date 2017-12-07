@@ -24,8 +24,9 @@ export class PassagemsListarComponent implements OnInit {
   private nome: String;
   private cpf: String;
   private nome_cobrador: String;
+  private id_cobrador: String;
   private data: Date;
-  private valor: Number;
+  // private valor: Number;
   private cidade_origem: string;
   private cidade_destino:string;
   
