@@ -39,42 +39,17 @@ export class PassagemsListarComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit() {
-    // this.ci = this.pass.listarTodos()
-
-    this.passageiros.listarTodos().subscribe(data => {
-      // console.log(data);
+  atualizarLista() {
+    this.pass.listarTodos().subscribe(data => {
+      console.log(data);
       this.pas = data;
     })
-
-    this.cobradores.listarTodos().subscribe(data => {
-      // console.log(data)
-      this.cob = data;
-    })
-
-    // this.cidades.listarTodos().subscribe(data => {
-    //   // console.log(data);
-    //   this.ci = data;
-    // // })
-    // this.pas = this.pass.listarTodos()
-
-    this.route.params.subscribe(
-      params => {
-        if(params['id']){
-          this.id = params['id'];
-          //Buscamos o objeto para edição
-          this.pass.obterPorId(this.id).subscribe(
-            (existente: Passagem) => this.model = existente
-          )
-
-        }
-      }
-    )
-    
-    // this.ci = this.cidades.listarTodos()
-    // this.pas = this.passageiros.listarTodos()
-    // this.ci = this.pas.listarTodos()
   }
+
+  ngOnInit() {
+    this.atualizarLista();
+  }
+
   enviar(){
     this.pass.salvar(this.model).subscribe(
       function(dados){
@@ -84,6 +59,16 @@ export class PassagemsListarComponent implements OnInit {
         // console.error(erro)
       }
     )
+  }
+
+  excluir(id: string){
+    
+      if(confirm('Deseja realmente excluir?')){
+        this.pass.excluir(id).subscribe(
+        () => this.atualizarLista(),
+        erro => console.error(erro)
+    )  
+      }    
   }
 }
 

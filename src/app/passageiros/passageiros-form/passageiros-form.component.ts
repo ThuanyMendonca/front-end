@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-passageiros-form',
   templateUrl: './passageiros-form.component.html',
   styleUrls: ['./passageiros-form.component.css'],
-  providers: [PassageirosService,PartidaDestinoService]
+  providers: [PassageirosService, PartidaDestinoService]
 })
 export class PassageirosFormComponent implements OnInit {
   private title = 'Novo passageiro'
@@ -16,8 +16,8 @@ export class PassageirosFormComponent implements OnInit {
   private ci: any;
   private id: string;
   private cidade_origem: string;
-  private cidade_destino:string;
-  
+  private cidade_destino: string;
+
   constructor(
     private pas: PassageirosService,
     private cidades: PartidaDestinoService,
@@ -27,12 +27,13 @@ export class PassageirosFormComponent implements OnInit {
 
   ngOnInit() {
     this.ci = this.pas.listarTodos()
+    this.ci = this.cidades.listarTodos()
 
     this.route.params.subscribe(
       //Se existir um parametro id, significa que queremos editando
       //um objeto já existente
       params => {
-        if(params['id']){
+        if (params['id']) {
           this.id = params['id'];
           //Buscamos o objeto para edição
           this.pas.obterPorId(this.id).subscribe(
@@ -42,16 +43,14 @@ export class PassageirosFormComponent implements OnInit {
         }
       }
     )
-    
-    this.ci = this.cidades.listarTodos()
-    
+
   }
-  enviar(){
+  enviar() {
     this.pas.salvar(this.model).subscribe(
-      function(dados){
+      function (dados) {
         alert('Salvo com sucesso');
       },
-      function(erro){
+      function (erro) {
         // console.error(erro)
       }
     )

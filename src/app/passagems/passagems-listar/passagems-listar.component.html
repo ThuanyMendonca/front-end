@@ -1,12 +1,14 @@
 <div class="container">
-<h2 style="text-align:center">{{titulo}}</h2>
+  <h2 style="text-align:center">{{titulo}}</h2>
   <a [routerLink]="['/passagems/novo']" class="btn btn-primary btn-md" style="background-color: #dc3545;">
-  Nova Passagem
+    Nova Passagem
   </a>
-  <br><br>
+  <br>
+  <br>
   <table class="table table-responsive">
     <thead>
       <tr>
+<<<<<<< HEAD
         <th class="bg-danger text-white" >Nome</th>
         <th class="bg-danger text-white">CPF</th>
         <th class="bg-danger text-white">Cobrador</th> 
@@ -30,9 +32,33 @@
         <td>{{ p.cidade_destino.cidade }}</td>
         <td>{{ p.data | date: 'dd/MM/yyyy' }}</td>
          <!-- <td>{{ p.valor }}</td>   -->
+=======
+        <th class="bg-danger text-white">Passagem</th>
+        <th class="bg-danger text-white">Passageiro</th>
+        <th class="bg-danger text-white">Cobrador</th>
+        <th class="bg-danger text-white">Origem</th>
+        <th class="bg-danger text-white">Destino</th>
+        <th class="bg-danger text-white">Data</th>
+        <th class="bg-danger text-white">Valor</th>
+
+        <th class="bg-danger text-white">Excluir</th>
+      </tr>
+      <tr *ngFor="let p of pas; let i = index;">
+        <td>
+          <a [routerLink]="['/passagems', p._id]">
+            {{ 'Passagem' + (i+1) }}
+          </a>
+        </td>
+        <td>{{ p.passageiro.nome }}</td>
+        <td>{{ p.cobrador.nome}}</td>
+        <td>{{ p.cidade_origem.cidade }}</td>
+        <td>{{ p.cidade_destino.cidade }}</td>
+        <td>{{ p.data | date: 'dd/MM/yyyy' }}</td>
+        <td>{{ p.valor}}</td>
+>>>>>>> 8233f530c1fd423075a20d168ff4edf1a09090fc
         <td>
           <button class="btn btn btn-danger" (click)="excluir(p._id)">
-             <span class="glyphicon glyphicon-trash"></span> 
+            <span class="glyphicon glyphicon-trash"></span>
           </button>
         </td>
       </tr>

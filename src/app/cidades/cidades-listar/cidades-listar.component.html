@@ -30,7 +30,7 @@
       </tr>
       <tr *ngFor="let cid of cidades">
       <td>
-        <a [routerLink]="['/cidades', cidades._id]">
+        <a [routerLink]="['/cidades', cid._id]">
           {{cid.cidade}}
         </a>
       </td>     

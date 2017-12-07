@@ -7,33 +7,22 @@
       <!-- <pre>{{ model | json}}</pre> -->
 
       <div class="form-group">
-          <label for="nome">Nome</label>
-          <select id="nome" name="nome" class="form-control"
-            [(ngModel)]="model.nome">
+          <label for="passageiro">Passageiro</label>
+          <select id="passageiro" name="passageiro" class="form-control"
+            [(ngModel)]="model.passageiro">
             <option value="">(Selecione)</option>
-            <option *ngFor="let p of pas" [ngValue]="p._id">
+            <option *ngFor="let p of pas | async" [ngValue]="p._id">
               {{p.nome}}
-            </option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="cpf">CPF</label>
-          <select id="cpf" name="cpf" class="form-control"
-            [(ngModel)]="model.cpf">
-            <option value="">(Selecione)</option>
-            <option *ngFor="let p of pas" [ngValue]="p._id">
-              {{p.cpf}}
-              <!-- {{p.cpf}} -->
             </option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="nome">Cobrador</label>
-          <select id="nome" name="nome" class="form-control"
-            [(ngModel)]="model.nome">
+          <label for="cobrador">Cobrador</label>
+          <select id="cobrador" name="cobrador" class="form-control"
+            [(ngModel)]="model.cobrador">
             <option value="">(Selecione)</option>
-            <option *ngFor="let n of cob" [ngValue]="n._id">
+            <option *ngFor="let n of cob | async" [ngValue]="n._id">
               {{n.nome}}
             </option>
           </select>
@@ -72,6 +61,7 @@
         </div>
         <div class="text-center">
           <input type="submit" class="btn btn-primary" value="Enviar" />
+          <button type="button" class="btn btn-danger" routerLink="/passagems">Voltar</button>
         </div>
       </form>
     </div>

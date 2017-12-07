@@ -36,20 +36,19 @@ export class PassagemsFormComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) { }
-
+  
   ngOnInit() {
-    this.ci = this.pass.listarTodos()
+    this.pas = this.passageiros.listarTodos();
+    this.ci = this.cidades.listarTodos();
+    this.cob = this.cobradores.listarTodos();
 
-    this.cobradores.listarTodos().subscribe(data => {
-      console.log(data);
-      this.cob = data;
-    })
+    // this.cobradores.listarTodos().subscribe(data => {
+    //   this.cob = data;
+    // })
 
-    this.passageiros.listarTodos().subscribe(data => {
-      console.log(data);
-      this.pas = data;
-    })
-    // this.pas = this.pas.listarTodos()
+    // this.passageiros.listarTodos().subscribe(data => {
+    //   this.pas = data;
+    // })
 
     this.route.params.subscribe(
       params => {
@@ -64,7 +63,6 @@ export class PassagemsFormComponent implements OnInit {
       }
     )
     
-    this.ci = this.cidades.listarTodos()
     // this.pas = this.passageiros.listarTodos()
     // this.ci = this.pas.listarTodos()
   }
